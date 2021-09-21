@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
     def create 
         item = Item.new(item_params)
-        item.category = Category.last ##NEEDS TO CHANGE!!!!!
+        # item.category = Category.last ##NEEDS TO CHANGE!!!!!
         if item.save 
             render json: ItemSerializer.new(item)
         else
@@ -39,6 +39,6 @@ class ItemsController < ApplicationController
     private 
     
     def item_params 
-        params.require(:item).permit(:name, :description, :price)
+        params.require(:item).permit(:name, :description, :price, :category_id)
     end
 end

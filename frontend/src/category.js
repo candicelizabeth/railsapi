@@ -29,18 +29,24 @@ class Category{
     }
 
     setActiveCategory = (e) => {
-        let filteredCategory 
+        //event listener set category 
+        //add filter method 
+        //remove the current items replace with new list of items
+        let filteredCategory
         Category.all.forEach(c => {
+
             if(c.element === this.element && !this.active){
+                // debugger
                 c.element.classList.add('activated')
                 c.active = true
                 filteredCategory = c
+
+            
             }else{
                 c.element.classList.remove('activated')
                 c.active = false
             }
-
-            // Item.filterByCategory(filteredCategory)
+            Item.filteredByCategory(filteredCategory)  
         }) 
     }
 
