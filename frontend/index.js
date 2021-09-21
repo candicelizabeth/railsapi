@@ -24,17 +24,7 @@ function handleSubmit(e){
 function createEditFields(editBtn){
     const div = editBtn.previousElementSibling;
     
-    // const price = div.children[0].innerText
-    // const name = div.children[1].innerText
-    // const description = div.children[2].innerText
-    // // debugger 
-    // div.innerHTML = 
-    // `<input type="number" id ="edit-${price}" value= "${price}">
-    // <input type="text" id ="edit-${name}" value= "${name}">
-    // <input type="text" id = "edit-${description}" value= "${description}">
-    // `
-    // debugger
-    for(const element of div.children){
+      for(const element of div.children){
         let inputValue = element.innerText;
         let name = element.classList[0];
         // debugger
