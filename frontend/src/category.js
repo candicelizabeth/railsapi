@@ -33,6 +33,8 @@ class Category{
         //add filter method 
         //remove the current items replace with new list of items
         let filteredCategory
+        // let body = document.querySelector('body'); 
+        // body.style.backgroundColor = "pink"
         Category.all.forEach(c => {
 
             if(c.element === this.element && !this.active){

@@ -4,6 +4,7 @@ const port = 'http://localhost:3000';
 const itemApi = new ItemApi(port);
 const categoryApi = new CategoryApi(port);
 const dropdown = document.getElementById('cat-dropdown')
+const categoryInput = document.getElementById('category-id')
 // debugger
 const ul = document.getElementById('item-list');
 const form = document.getElementById('item-form');

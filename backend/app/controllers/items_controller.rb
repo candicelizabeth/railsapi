@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     end
 
     def create 
+        # byebug
         item = Item.new(item_params)
         # item.category = Category.last ##NEEDS TO CHANGE!!!!!
         if item.save 
@@ -39,6 +40,6 @@ class ItemsController < ApplicationController
     private 
     
     def item_params 
-        params.require(:item).permit(:name, :description, :price, :category_id)
+        params.require(:item).permit(:name, :description, :price, :category_id, :category_name)
     end
 end

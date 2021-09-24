@@ -18,12 +18,15 @@ class ItemApi {
     createItems(){
 
         const itemInfo = {
+            item:{
             price: priceInput.value,
             name: nameInput.value,
             description: descriptionInput.value,
-            category_id: dropdown.value
+            // category_id: dropdown.value
+            category_name: categoryInput.value
+            }
         }
-        // debugger
+        //  debugger
         
         const configObject = {
             method: 'POST',
@@ -38,6 +41,16 @@ class ItemApi {
         .then(json => {
             // debugger
             const i = new Item({id:json.data.id, ...json.data.attributes})
+
+            // debugger
+            const cat = Category.all.find(c => parseInt(c.id) === i.categoryId)
+            if(!cat){
+                
+                let catObj = new Category({id: json.data.attributes.category_id, name: json.data.attributes.category_name})
+                catObj.addToDom()
+                catObj.addToDropDown()
+            }
+            // debugger
                 i.renderItem()
         })
     }
